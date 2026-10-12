@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>202633005_김석균 | 내 소개 & Profile</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="page">
+<section class="card intro-card">
+  <div class="intro-head">
+    <h2>내 소개</h2>
+    <span class="student-id">202633005_김석균</span>
+  </div>
+  <div class="intro-layout">
+    <div class="menu-box">
+      <iframe src="iframe/menu.html" title="페이지 메뉴" style="width:100%; height:100%; border:0;"></iframe>
+    </div>
+    <div class="content-box">
+      <iframe id="profileTableContent" src="content-box/profile-table.html" title="프로필 테이블" style="display:block; width:100%; height:100%; border:0;"></iframe>
+      <iframe id="profileFormContent" src="content-box/profile-form.html" title="프로필 폼" style="display:none; width:100%; height:100%; border:0;"></iframe>
+      <iframe id="ahnContent" src="content-box/model.html" title="나의 롤모델" style="display:none; width:100%; height:100%; border:0;"></iframe>
+    </div>
+  </div>
+</section>
+
+
+<section class="card other-intro-section" id="otherIntroSection">
+    <h2>그 외 소개</h2>
+
+    <div class="extra-menu">
+        <button type="button" class="extra-button active" data-extra-page="schools">
+            🏫 초·중·고 소개
+        </button>
+
+        <button type="button" class="extra-button" data-extra-page="frog">
+            🐸 요즘 관심 주제
+        </button>
+    </div>
+
+    <div id="extraContentBox" class="extra-content-box" hidden>
+        <iframe
+            id="extraContentFrame"
+            title="초중고 소개"
+        ></iframe>
+    </div>
+</section>
+
+
+</main>
+<script>
+window.addEventListener("message", function (event) {
+    if (!event.data || event.data.type !== "showPage") return;
+
+    const page = event.data.page;
+
+    // 추가 소개 메뉴 처리
+    if (page === "extra") {
+        const section = document.getElementById("otherIntroSection");
+        const contentBox = document.getElementById("extraContentBox");
+
+        if (!section || !contentBox) return;
+
+        contentBox.hidden = false;
+
+        requestAnimationFrame(function () {
+            section.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+
+        return;
+    }
+
+    // 기존 프로필 메뉴 처리
+    const pages = {
+        "profile-table": document.getElementById("profileTableContent"),
+        "profile-form": document.getElementById("profileFormContent"),
+        "ahn": document.getElementById("ahnContent")
+    };
+
+    if (!pages[page]) return;
+
+    Object.values(pages).forEach(function (frame) {
+        frame.style.display = "none";
+    });
+
+    pages[page].style.display = "block";
+
+    document.querySelector(".content-box").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+});
+
+const extraSection = document.getElementById("otherIntroSection");
+const extraContentBox = document.getElementById("extraContentBox");
+const extraContentFrame = document.getElementById("extraContentFrame");
+
+const extraButtons = document.querySelectorAll("[data-extra-page]");
+
+const extraPages = {
+    schools: {
+        src: "content-box/schools.html",
+        title: "초·중·고 소개"
+    },
+    frog: {
+        src: "content-box/frog_boys_case.html",
+        title: "개구리 소년 실종 사건"
+    }
+};
+
+extraButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        const page = extraPages[button.dataset.extraPage];
+
+        if (!page) return;
+
+        // 콘텐츠 영역 표시
+        extraContentBox.hidden = false;
+
+        // 선택한 HTML 파일을 처음으로 불러오거나 다른 페이지로 교체
+        if (extraContentFrame.getAttribute("src") !== page.src) {
+            extraContentFrame.src = page.src;
+        }
+
+        extraContentFrame.title = page.title;
+
+        // 선택된 버튼의 디자인 변경
+        extraButtons.forEach(function (item) {
+            item.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        // 그 외 소개 영역으로 부드럽게 이동
+        requestAnimationFrame(function () {
+            extraSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        });
+    });
+});
+
+</script>
+</body>
+</html>

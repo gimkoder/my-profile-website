@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>학교 소개</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            overflow-y: auto;
+            overflow-x: hidden;
+            font-family: "Noto Sans KR", Arial, sans-serif;
+            color: #263247;
+            background: #f5f7fb;
+            line-height: 1.75;
+        }
+
+        .schools-page {
+            width: 100%;
+            padding: 24px;
+        }
+
+        .page-header {
+            margin-bottom: 24px;
+            padding: 24px;
+            border-radius: 16px;
+            color: white;
+            background: linear-gradient(135deg, #243b70, #4776b8);
+        }
+
+        .page-header h1 {
+            margin: 0 0 8px;
+            font-size: 27px;
+        }
+
+        .page-header p {
+            margin: 0;
+            font-size: 14px;
+            color: #e4ecff;
+        }
+
+        .school-card {
+            margin-bottom: 22px;
+            padding: 24px;
+            border: 1px solid #e1e7f0;
+            border-radius: 16px;
+            background: #ffffff;
+            box-shadow: 0 5px 16px rgba(30, 48, 80, 0.05);
+        }
+
+        .school-number {
+            display: inline-block;
+            margin-bottom: 8px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            color: #315ca8;
+            background: #eaf1ff;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .school-card h2 {
+            margin: 0 0 5px;
+            color: #1d3155;
+            font-size: 22px;
+        }
+
+        .school-type {
+            margin: 0 0 18px;
+            color: #758198;
+            font-size: 13px;
+        }
+
+        .school-card h3 {
+            margin: 20px 0 8px;
+            padding-left: 10px;
+            border-left: 3px solid #4776b8;
+            font-size: 16px;
+        }
+
+        .school-card p {
+            margin: 0;
+            font-size: 14px;
+            word-break: keep-all;
+        }
+
+        .history-list {
+            margin: 0;
+            padding-left: 20px;
+            font-size: 14px;
+        }
+
+        .history-list li {
+            margin: 6px 0;
+        }
+
+        .school-info {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            gap: 8px;
+            margin-top: 16px;
+            padding: 14px;
+            border-radius: 10px;
+            background: #f5f7fb;
+            font-size: 13px;
+        }
+
+        .school-info strong {
+            color: #34496b;
+        }
+
+        .school-info span {
+            overflow-wrap: anywhere;
+        }
+
+        .school-link {
+            display: inline-block;
+            margin-top: 16px;
+            color: #315ca8;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .school-link:hover {
+            text-decoration: underline;
+        }
+
+        .page-footer {
+            padding: 12px 4px 20px;
+            color: #7b8495;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        @media (max-width: 480px) {
+            .schools-page {
+                padding: 14px;
+            }
+
+            .page-header,
+            .school-card {
+                padding: 18px;
+            }
+
+            .page-header h1 {
+                font-size: 23px;
+            }
+
+            .school-card h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="schools-page">
+        <header class="page-header">
+            <h1>🏫 학교 소개</h1>
+            <p>제주아라초등학교 · 제주아라중학교 · 제주세화고등학교</p>
+        </header>
+
+        <section class="school-card">
+            <span class="school-number">01 · 초등학교</span>
+            <h2>제주아라초등학교</h2>
+            <p class="school-type">제주특별자치도 제주시 소재 공립 초등학교</p>
+
+            <h3>학교 소개</h3>
+            <p>
+                제주아라초등학교는 제주시 중앙로에 위치한 공립 초등학교이다.
+                초등교육을 담당하는 교육기관으로, 학교의 역사와 교육 활동에
+                관한 정보는 공식 홈페이지에서 확인할 수 있다.
+            </p>
+
+            <h3>주요 연혁</h3>
+            <ul class="history-list">
+                <li>1933년 4월 — 아라삼공서당으로 개설</li>
+                <li>1945년 10월 21일 — 아라공립국민학교로 승격·개칭</li>
+                <li>1948년 — 제주 4·3 사건으로 교사가 전소되어 폐교</li>
+                <li>1960년 9월 1일 — 광양국민학교 아라분교장으로 설립</li>
+                <li>1963년 3월 6일 — 아라국민학교로 승격 개교</li>
+            </ul>
+
+            <div class="school-info">
+                <strong>학교급</strong>
+                <span>초등학교</span>
+                <strong>설립 유형</strong>
+                <span>공립</span>
+                <strong>소재지</strong>
+                <span>제주특별자치도 제주시 중앙로 518</span>
+            </div>
+
+            <a class="school-link"
+               href="https://school.jje.go.kr/jejuara/main.do"
+               target="_blank"
+               rel="noopener noreferrer">
+                아라초등학교 공식 홈페이지 ↗
+            </a>
+        </section>
+
+        <section class="school-card">
+            <span class="school-number">02 · 중학교</span>
+            <h2>제주아라중학교</h2>
+            <p class="school-type">제주특별자치도 제주시 소재 공립 중학교</p>
+
+            <h3>학교 소개</h3>
+            <p>
+                제주아라중학교는 제주시 지역의 중등교육을 담당하는 학교이다.
+                교과 교육과 다양한 학교 활동을 통해 중학교 교육과정을 운영한다.
+            </p>
+
+            <h3>주요 연혁</h3>
+            <ul class="history-list">
+                <li>1990년 12월 6일 — 아라중학교 설립 인가</li>
+                <li>1992년 3월 1일 — 초대 교장 취임</li>
+                <li>1992년 3월 2일 — 개교</li>
+                <li>1995년 2월 25일 — 체육관 준공</li>
+                <li>2011년 8월 31일 — 학교 대수선 공사 완료</li>
+            </ul>
+
+            <div class="school-info">
+                <strong>학교급</strong>
+                <span>중학교</span>
+                <strong>설립 유형</strong>
+                <span>공립</span>
+                <strong>개교</strong>
+                <span>1992년 3월</span>
+            </div>
+
+            <a class="school-link"
+               href="https://www.jje.go.kr/"
+               target="_blank"
+               rel="noopener noreferrer">
+                제주특별자치도교육청 ↗
+            </a>
+        </section>
+
+        <section class="school-card">
+            <span class="school-number">03 · 고등학교</span>
+            <h2>제주세화고등학교</h2>
+            <p class="school-type">제주특별자치도 제주시 구좌읍 세화리 소재 고등학교</p>
+
+            <h3>학교 소개</h3>
+            <p>
+                제주세화고등학교는 제주 동부 지역에 위치한 고등학교이다.
+                고등학교 교육과정을 바탕으로 교과 수업과 학교 교육 활동을 운영한다.
+                학교의 설립 배경과 상세 연혁은 학교 공식 자료를 통해 확인할 수 있다.
+            </p>
+
+            <h3>학교 연혁 및 특징</h3>
+            <ul class="history-list">
+                <li>제주 동부 지역에 위치한 고등학교</li>
+                <li>고등학교 교육과정에 따른 교과 교육 운영</li>
+                <li>학교의 상세 연혁과 교육 목표는 공식 학교 자료 참고</li>
+            </ul>
+
+            <div class="school-info">
+                <strong>학교급</strong>
+                <span>고등학교</span>
+                <strong>소재지</strong>
+                <span>제주특별자치도 제주시 구좌읍 세화리</span>
+            </div>
+
+            <a class="school-link"
+               href="https://www.jje.go.kr/"
+               target="_blank"
+               rel="noopener noreferrer">
+                제주특별자치도교육청에서 학교 정보 확인 ↗
+            </a>
+        </section>
+
+        <footer class="page-footer">
+            학교 연혁과 기본 정보는 공개된 자료를 바탕으로 정리했습니다.
+            상세 내용은 각 학교의 공식 자료를 확인해 주세요.
+        </footer>
+    </main>
+</body>
+</html>

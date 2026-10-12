@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 16px;
+            font-family: "Noto Sans KR", Arial, sans-serif;
+            color: #172033;
+            background: transparent;
+        }
+
+        .menu-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .menu-title {
+            margin: 4px 0 10px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .menu-button {
+            width: 100%;
+            padding: 14px 12px;
+            border: 1px solid #dce2ea;
+            border-radius: 10px;
+            background: #ffffff;
+            color: #172033;
+            font-size: 15px;
+            text-align: left;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .menu-button:hover {
+            background: #eef2ff;
+            border-color: #365cf5;
+        }
+
+        .menu-button.active {
+            background: #365cf5;
+            border-color: #365cf5;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .menu-description {
+            margin-top: 8px;
+            color: #697386;
+            font-size: 12px;
+            line-height: 1.6;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="menu-container">
+        <h2 class="menu-title">📂 메뉴</h2>
+
+        <button type="button"
+                class="menu-button active"
+                data-page="profile-table">
+            📋 프로필 테이블
+        </button>
+
+        <button type="button"
+                class="menu-button"
+                data-page="profile-form">
+            📝 프로필 폼
+        </button>
+
+        <button type="button"
+                class="menu-button"
+                data-page="ahn">
+            👤 존경하는 인물
+        </button>
+
+        
+<button type="button" class="menu-button" data-page="extra">
+    📌 그 외 소개
+</button>
+
+
+        <p class="menu-description">
+            메뉴를 선택하면<br>
+            콘텐츠가 변경됩니다.
+        </p>
+    </nav>
+
+    <script>
+        const menuButtons = document.querySelectorAll(".menu-button");
+
+        menuButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                const page = button.dataset.page;
+
+                window.parent.postMessage({
+                    type: "showPage",
+                    page: page
+                }, "*");
+
+                menuButtons.forEach(function (item) {
+                    item.classList.remove("active");
+                });
+
+                button.classList.add("active");
+            });
+        });
+    </script>
+</body>
+</html>
+

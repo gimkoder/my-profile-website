@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>role-model-page</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px;
+            font-family: "Noto Sans KR", Arial, sans-serif;
+            color: #172033;
+            background: #ffffff;
+            line-height: 1.8;
+        }
+
+        .role-model-page {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 10px 10px 25px;
+        }
+
+        .hero h1 {
+            margin: 0 0 8px;
+            font-size: 32px;
+            color: #172033;
+        }
+
+        .hero p {
+            margin: 0;
+            color: #697386;
+            font-size: 15px;
+        }
+
+        .hero-icon {
+            font-size: 46px;
+            margin-bottom: 5px;
+        }
+
+        .history-image {
+            width: 100%;
+            max-width: 420px;
+            display: block;
+            margin: 10px auto 25px;
+            border-radius: 14px;
+            border: 1px solid #dce2ea;
+        }
+
+        .section {
+            margin-bottom: 24px;
+            padding: 20px;
+            background: #f8fafc;
+            border: 1px solid #dce2ea;
+            border-radius: 14px;
+        }
+
+        .section h2 {
+            margin: 0 0 12px;
+            font-size: 21px;
+            color: #172033;
+        }
+
+        .section h2 span {
+            margin-right: 6px;
+        }
+
+        .section p {
+            margin: 8px 0;
+            font-size: 15px;
+        }
+
+        .keyword {
+            color: #365cf5;
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .timeline {
+            display: grid;
+            gap: 12px;
+        }
+
+        .timeline-item {
+            padding: 14px 16px;
+            background: #ffffff;
+            border-left: 4px solid #365cf5;
+            border-radius: 8px;
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: #365cf5;
+        }
+
+        .quote-box {
+            margin-top: 15px;
+            padding: 18px;
+            background: #fffde7;
+            border-radius: 10px;
+            border: 1px solid #eee8b0;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .keyword-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .keyword-tag {
+            display: inline-block;
+            padding: 5px 11px;
+            background: #eef2ff;
+            color: #365cf5;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .source-box {
+            padding: 15px;
+            background: #f3f4f6;
+            border-radius: 10px;
+            font-size: 13px;
+            color: #697386;
+        }
+
+        .source-box a {
+            color: #365cf5;
+            text-decoration: none;
+        }
+
+        .source-box a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                padding: 15px;
+            }
+
+            .hero h1 {
+                font-size: 26px;
+            }
+
+            .section {
+                padding: 16px;
+            }
+
+            .section h2 {
+                font-size: 19px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="role-model-page">
+
+    <header class="hero">
+        <div class="hero-icon">👤나의 롤모델</div>
+        <h1>안중근 의사</h1>
+        <p>독립운동가이자 동양의 평화를 꿈꾸었던 인물</p>
+    </header>
+
+    <img
+        src="../image/model.jpg"
+        alt="안중근 의사 관련 자료"
+        class="history-image"
+    >
+
+    <section class="section">
+        <h2><span>👤</span>안중근 의사는 누구인가?</h2>
+
+        <p>
+            <a class="keyword"
+               href="https://encykorea.aks.ac.kr/Article/E0035026"
+               target="_blank"
+               rel="noopener noreferrer">안중근</a>
+            의사는 1879년에 태어나 1910년에 순국한 독립운동가이다.
+        </p>
+
+        <p>
+            그는 교육을 통한 계몽운동에 참여하고 이후
+            <a class="keyword"
+               href="https://namu.wiki/w/%EC%9D%98%EB%B3%91"
+               target="_blank"
+               rel="noopener noreferrer">의병</a>
+            활동에도 참여하였다.
+            이후 국권 회복을 위해 독립운동을 계속하였다.
+        </p>
+
+        <p>
+            안중근의 생애는 그가 직접 기록한
+            <a class="keyword"
+               href="https://encykorea.aks.ac.kr/Article/E0035030"
+               target="_blank"
+               rel="noopener noreferrer">『안응칠역사』</a>
+            를 통해서도 살펴볼 수 있다.
+        </p>
+    </section>
+
+    <section class="section">
+        <h2><span>✋</span>단지동맹</h2>
+
+        <p>
+            1909년 안중근을 비롯한 12명의 동지들은
+            <a class="keyword"
+               href="https://encykorea.aks.ac.kr/Article/E0066338"
+               target="_blank"
+               rel="noopener noreferrer">단지동맹</a>
+            을 결성하였다.
+        </p>
+
+        <p>
+            이들은 조국의 독립을 위해 생사를 함께하겠다는 뜻을 다지고
+            독립을 위한 투쟁을 이어가기로 맹세하였다.
+        </p>
+
+        <div class="keyword-list">
+            <span class="keyword-tag">단지동맹</span>
+            <span class="keyword-tag">독립운동</span>
+            <span class="keyword-tag">의병</span>
+            <span class="keyword-tag">국권회복</span>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2><span>🚂</span>하얼빈 의거</h2>
+
+        <p>
+            1909년 10월 26일, 안중근은
+            <a class="keyword"
+               href="https://encykorea.aks.ac.kr/Article/E0046347"
+               target="_blank"
+               rel="noopener noreferrer">만주 하얼빈역</a>
+            에서 이토 히로부미를 저격하였다.
+        </p>
+
+        <p>
+            이토 히로부미가 하얼빈에 도착한 뒤 러시아 의장대의 사열을 받는 과정에서
+            안중근은 환영 인파 속에서 거사를 실행하였다.
+        </p>
+
+        <p>
+            거사 이후 안중근은 러시아군에 체포되었고,
+            이후 일본 측에 인도되어
+            <a class="keyword"
+               href="https://namu.wiki/w/%EB%A4%BC%EC%88%9C%EA%B0%90%EC%98%A5"
+               target="_blank"
+               rel="noopener noreferrer">뤼순감옥</a>
+            에 수감되었다.
+        </p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <span class="timeline-year">1909. 10. 26.</span><br>
+                하얼빈역에서 이토 히로부미 저격
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-year">1909. 10. 28.</span><br>
+                일본 측에 인도되어 뤼순감옥에 수감
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2><span>⚖️</span>재판과 순국</h2>
+
+        <p>
+            안중근은 뤼순감옥에 수감된 뒤 재판을 받았으며
+            사형을 선고받았다.
+        </p>
+
+        <p>
+            그는 옥중에서 자신의 생각과 생애를 기록하는 한편,
+            동양의 평화에 대한 자신의 구상도 글로 남겼다.
+        </p>
+
+        <p>
+            결국 1910년 3월 26일 뤼순감옥에서 순국하였다.
+        </p>
+
+        <div class="quote-box">
+            「위국헌신 군인본분」<br>
+            나라를 위해 몸을 바침은 군인의 본분이다.
+        </div>
+    </section>
+
+    <section class="section">
+        <h2><span>🌏</span>동양평화론</h2>
+
+        <p>
+            안중근은 옥중에서
+            <a class="keyword"
+               href="https://encykorea.aks.ac.kr/Article/E0016677"
+               target="_blank"
+               rel="noopener noreferrer">『동양평화론』</a>
+            을 집필하기 시작하였다.
+        </p>
+
+        <p>
+            『동양평화론』은 한국·중국·일본이 서로 협력하여
+            동양의 평화를 이루고 나아가 세계평화를 위해 노력해야 한다는
+            생각을 담고 있다.
+        </p>
+
+        <p>
+            안중근의 사상은 단순히 한국의 독립만을 생각하는 데 그치지 않고,
+            동아시아의 평화와 협력이라는 관점으로도 이어졌다.
+        </p>
+    </section>
+
+    <section class="section">
+        <h2><span>🖋️</span>안중근 의사의 유묵</h2>
+
+        <p>
+            안중근은 뤼순감옥에서 여러 글씨를 남겼으며,
+            이를
+            <a class="keyword"
+               href="https://encykorea.aks.ac.kr/Article/E0035029"
+               target="_blank"
+               rel="noopener noreferrer">유묵</a>
+            이라고 한다.
+        </p>
+
+        <p>
+            그의 유묵에는 나라와 평화, 책임과 관련된 생각이 담겨 있으며,
+            현재까지도 안중근 의사의 정신을 보여주는 중요한 자료로 평가된다.
+        </p>
+
+        <div class="keyword-list">
+            <span class="keyword-tag">유묵</span>
+            <span class="keyword-tag">위국헌신 군인본분</span>
+            <span class="keyword-tag">동양평화</span>
+            <span class="keyword-tag">독립</span>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2><span>📚</span>주요 역사 키워드</h2>
+
+        <div class="keyword-list">
+            <a class="keyword-tag"
+               href="https://encykorea.aks.ac.kr/Article/E0035026"
+               target="_blank"
+               rel="noopener noreferrer">안중근</a>
+
+            <a class="keyword-tag"
+               href="https://encykorea.aks.ac.kr/Article/E0066338"
+               target="_blank"
+               rel="noopener noreferrer">단지동맹</a>
+
+            <a class="keyword-tag"
+               href="https://encykorea.aks.ac.kr/Article/E0046347"
+               target="_blank"
+               rel="noopener noreferrer">하얼빈 의거</a>
+
+            <a class="keyword-tag"
+               href="https://encykorea.aks.ac.kr/Article/E0016677"
+               target="_blank"
+               rel="noopener noreferrer">동양평화론</a>
+
+            <a class="keyword-tag"
+               href="https://encykorea.aks.ac.kr/Article/E0035029"
+               target="_blank"
+               rel="noopener noreferrer">안중근 의사 유묵</a>
+
+            <a class="keyword-tag"
+               href="https://encykorea.aks.ac.kr/Article/E0035030"
+               target="_blank"
+               rel="noopener noreferrer">안중근 의사 자서전</a>
+        </div>
+    </section>
+
+    <div class="source-box">
+        <strong>📖 참고 자료</strong><br>
+        한국민족문화대백과사전의 안중근 관련 자료를 바탕으로 구성하였다.
+        각 역사적 키워드를 클릭하면 관련 자료를 확인할 수 있다.
+    </div>
+
+</div>
+
+</body>
+</html>

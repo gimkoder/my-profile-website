@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>프로필 폼</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+html, body { min-height: 100%; }
+body { min-height: 0; padding: 12px; background: #fff; overflow-y: auto; }
+.page { width: 100%; margin: 0; }
+.topbar { margin-bottom: 12px; }
+.layout { align-items: start; }
+.profile-card, .preview { min-width: 0; }
+</style>
+</head>
+<body>
+<main class="page">
+<section class="topbar">
+
+  <div class="actions">
+    <button type="button" class="ghost" id="loadBtn">저장 내용 불러오기</button>
+    <button type="button" class="primary" id="saveBtn">임시 저장</button>
+  </div>
+</section>
+<section class="layout">
+
+  <article class="card profile-card">
+
+    <div class="card-head">
+      <h2>프로필 입력</h2>
+      <span class="required-note">* 필수 입력 항목</span>
+    </div>
+
+    <form id="profileForm">
+
+      <section class="section">
+
+        <h3 class="section-title">기본 정보</h3>
+
+        <div class="field">
+          <label for="name" class="required">이름</label>
+          <input id="name"
+                 name="name"
+                 type="text"
+                 placeholder="이름을 입력하세요"
+                 required
+                 autocomplete="name">
+        </div>
+
+        <div class="field">
+          <label class="required">성별</label>
+
+          <div class="gender">
+
+            <label class="radio">
+              <input type="radio"
+                     name="gender"
+                     value="남"
+                     required>
+              남
+            </label>
+
+            <label class="radio">
+              <input type="radio"
+                     name="gender"
+                     value="여">
+              여
+            </label>
+
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="birth" class="required">생년월일(Date)</label>
+          <input id="birth"
+                 name="birth"
+                 type="date"
+                 required>
+        </div>
+
+        <div class="field">
+          <label for="email">e-mail</label>
+          <input id="email"
+                 name="email"
+                 type="email"
+                 placeholder="example@email.com"
+                 autocomplete="email">
+        </div>
+
+        <div class="field">
+          <label for="blog">blog URL</label>
+          <input id="blog"
+                 name="blog"
+                 type="url"
+                 placeholder="https://">
+        </div>
+
+      </section>
+
+      <section class="section">
+
+        <h3 class="section-title">신체 정보</h3>
+
+        <div class="field">
+
+          <label for="phone1">핸드폰 NO</label>
+
+          <div class="phone">
+
+            <select id="phone1"
+                    name="phone1"
+                    aria-label="휴대전화 앞자리">
+
+              <option>010</option>
+              <option>011</option>
+              <option>016</option>
+              <option>017</option>
+              <option>018</option>
+              <option>019</option>
+
+            </select>
+
+            <input id="phone2"
+                   name="phone2"
+                   type="tel"
+                   inputmode="numeric"
+                   maxlength="4"
+                   placeholder="1234"
+                   aria-label="휴대전화 중간자리">
+
+            <input id="phone3"
+                   name="phone3"
+                   type="tel"
+                   inputmode="numeric"
+                   maxlength="4"
+                   placeholder="5678"
+                   aria-label="휴대전화 뒷자리">
+
+          </div>
+
+        </div>
+
+        <div class="field">
+
+          <label for="height">신장(cm)</label>
+
+          <div class="unit">
+
+            <input id="height"
+                   name="height"
+                   type="number"
+                   min="100"
+                   max="250"
+                   step="1"
+                   value="178">
+
+            <span>cm</span>
+
+          </div>
+
+        </div>
+
+        <div class="field">
+
+          <label for="weight">몸무게(kg)</label>
+
+          <div>
+
+            <div class="range-wrap">
+
+              <input id="weight"
+                     name="weight"
+                     type="range"
+                     min="55"
+                     max="130"
+                     step="1"
+                     value="70">
+
+              <output id="weightValue"
+                      class="range-value">
+                70 kg
+              </output>
+
+            </div>
+
+            <div class="range-meta">
+              <span>55kg</span>
+              <span>130kg</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="section">
+
+        <h3 class="section-title">참고사항</h3>
+
+        <div class="field" style="align-items:start">
+
+          <label for="memo">[어록/논어]</label>
+
+          <div>
+
+            <textarea id="memo"
+                      name="memo"
+                      placeholder="자신을 소개하거나 참고할 내용을 입력하세요.">"Freedom is the right of all sentient beings."
+"易地思之"
+                    </textarea>                                                    
+
+            <p class="hint">
+              입력 내용은 오른쪽 미리보기에서 실시간으로 확인할 수 있습니다.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <div class="bottom-actions">
+
+        <button type="reset" id="resetBtn">
+          초기화
+        </button>
+
+        <button type="button"
+                class="primary"
+                id="completeBtn">
+          입력 완료
+        </button>
+
+      </div>
+
+    </form>
+
+  </article>
+
+  <aside class="card preview">
+
+    <div class="preview-top">
+
+      <h2>실시간 Profile</h2>
+
+      <span class="status" id="status">
+        입력 대기
+      </span>
+
+    </div>
+
+    <div class="mini-profile">
+      
+      <div class="avatar" id="avatar" img src="auto.jpg">
+        
+      </div>
+
+      <h3 class="preview-name" id="previewName">
+        이름을 입력하세요
+      </h3>
+
+      <p class="preview-meta" id="previewMeta">
+        생년월일 · 성별
+      </p>
+
+      <div class="chips">
+
+        <span class="chip" id="heightChip">
+          신장 -- cm
+        </span>
+
+        <span class="chip" id="weightChip">
+          몸무게 70 kg
+        </span>
+
+        <span class="chip" id="contactChip">
+          연락처 미입력
+        </span>
+
+      </div>
+
+      <p class="quote" id="previewMemo">
+        참고사항이 여기에 표시됩니다.
+      </p>
+
+    </div>
+
+    <div class="progress-box">
+
+      <div class="progress-head">
+        <span>프로필 완성도</span>
+        <span id="progressText">0%</span>
+      </div>
+
+      <div class="progress">
+        <span id="progressBar"></span>
+      </div>
+
+    </div>
+
+    <p class="privacy">
+      ※ 이 페이지의 임시 저장 기능은 브라우저의 localStorage를 이용합니다.
+      서버로 정보를 전송하지 않는 단일 HTML 페이지입니다.
+    </p>
+
+  </aside>
+
+</section>
+
+</main>
+<div class="toast" id="toast"></div>
+<script src="../script.js"></script>
+</body>
+</html>
